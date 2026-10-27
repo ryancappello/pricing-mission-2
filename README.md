@@ -11,7 +11,7 @@ Use Node 22+: `npm test`, then `npm run build`. Preview dist with `python3 -m ht
 Classification uses linear-interpolated representative Q1 $29.99 and Q3 $89.99, with outside-range categories. Comparable-price tolerance ±5% is a declared display convention. Presets are Q1, median and Q3. Preliminary recommendation $149–$199 is distinct from exploratory selection. No demand, revenue, profit or cost modeling.
 
 ## GitHub Pages
-Target https://github.com/ryancappello/pricing-mission-2.git. All runtime paths are relative, so repository subpaths work. The included workflow tests, builds and deploys dist on main. Set repository Settings → Pages → Source → GitHub Actions. No external frontend packages are necessary.
+Target https://github.com/ryancappello/pricing-mission-2.git. All runtime paths are relative, so repository subpaths work. Live site: https://ryancappello.github.io/pricing-mission-2/. GitHub Pages deploys directly from main / (root); root runtime files match the successful dist build. Set repository Settings → Pages → Source → Deploy from a branch → main → /(root). No external frontend packages are necessary.
 
 ## Verification
 `npm test` checks imported populations, joins, statistics, classification boundaries, filters, sorting and source URL syntax. See TESTING.md for browser validation and publication status.

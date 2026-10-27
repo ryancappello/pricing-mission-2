@@ -8,4 +8,6 @@ October 27, 2026
 - Desktop (1440px) and mobile (390px) responsive layouts inspected. Mobile document width and scroll width both 390px, with table horizontal scrolling contained in its panel.
 - No captured JavaScript console errors in local browser test.
 - Source links checked for URL syntax and original data preservation, not fresh retailer availability or current-price verification.
-- GitHub repository reachable and empty when inspected. Terminal push requires authentication. Browser upload currently requires enabling file-URL access for the ChatGPT Chrome extension. Publication not yet complete or verified.
+- Dashboard source committed to GitHub through the signed-in browser (initial upload commit ae69d92294be23ccb6866c0a0862d8343bb3ea5e). GitHub Pages configured from main / (root).
+- Published site verified accessible: https://ryancappello.github.io/pricing-mission-2/. Live data loaded all KPI values; middle preset produced $40 median comparison, IKEA search returned exactly IKEA, reset restored profiles, and numeric price restored $174. No captured live JavaScript console errors.
+- Source verification remains historical; retailer prices were not rechecked.
