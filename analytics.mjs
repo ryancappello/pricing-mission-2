@@ -1,0 +1,6 @@
+export const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n);
+export const quantile=(a,q)=>{const s=[...a].sort((x,y)=>x-y),i=(s.length-1)*q,l=Math.floor(i);return s[l]+(s[Math.ceil(i)]-s[l])*(i-l)};
+export const comparable=o=>o.currency==='USD'&&o.pricing_unit==='per unit'&&Number.isFinite(o.current_price)&&!o.pricing_model.toLowerCase().includes('bundle');
+export function stats(offers){const p=offers.map(o=>o.current_price);return {min:Math.min(...p),max:Math.max(...p),median:quantile(p,.5),mean:p.reduce((a,b)=>a+b,0)/p.length,q1:quantile(p,.25),q3:quantile(p,.75)}}
+export function classify(p,s){return p<s.min?'Below the researched market':p>s.max?'Above the researched market':p<=s.q1?'Budget-oriented':p>=s.q3?'Premium-oriented':'Near the market middle'}
+export function filterProfiles(items,{search='',classification='',position='',sort='asc'}={}){return items.filter(c=>(!classification||c.classification===classification)&&(!position||c.positioning===position)&&`${c.name} ${c.offer.product_name}`.toLowerCase().includes(search.toLowerCase())).sort((a,b)=>sort==='name'?a.name.localeCompare(b.name):(sort==='desc'?-1:1)*(a.offer.current_price-b.offer.current_price))}
